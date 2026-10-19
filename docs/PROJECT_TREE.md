@@ -1,7 +1,7 @@
-# Complete project directory tree
+# Complete repository directory tree
 
 ```text
-OpenLiveTV/
+Android-TV-Live-App/
 ├── .gitignore
 ├── README.md
 ├── app
@@ -55,9 +55,14 @@ OpenLiveTV/
 │                           └── ConfigurationTest.kt
 ├── build.gradle.kts
 ├── docs
+│   ├── ANDROID_STUDIO_GUIDE.md
 │   ├── BUILD_RESULTS.md
 │   ├── MANUAL_TESTING.md
 │   └── PROJECT_TREE.md
+├── downloads
+│   ├── OpenLiveTV-debug.apk
+│   ├── README.md
+│   └── SHA256SUMS
 ├── gradle
 │   └── wrapper
 │       ├── gradle-wrapper.jar
@@ -68,4 +73,4 @@ OpenLiveTV/
 └── settings.gradle.kts
 ```
 
-Every listed file is included in the source ZIP. Build outputs, local.properties, IDE files, credentials and toolchain caches are excluded.
+The downloads folder contains the testing APK. Local build outputs, local.properties, IDE caches and signing keys are excluded from Git.

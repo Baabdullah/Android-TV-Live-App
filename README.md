@@ -1,5 +1,7 @@
 # OpenLive TV
 
+**[Download testing APK](https://github.com/Baabdullah/Android-TV-Live-App/raw/refs/heads/main/downloads/OpenLiveTV-debug.apk)** · **[Full Android Studio build and testing guide](docs/ANDROID_STUDIO_GUIDE.md)**
+
 [Complete project directory tree](docs/PROJECT_TREE.md) · [Actual build results](docs/BUILD_RESULTS.md)
 
 A configurable Kotlin / Jetpack Compose live TV player for authorized HTTPS HLS and direct media, with official YouTube app/browser playback. No feeds are installed automatically. The France 24 example is supplied by the project requirements and is **unverified**.
