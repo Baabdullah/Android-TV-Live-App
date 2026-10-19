@@ -1,0 +1,16 @@
+# Manual release checklist — NOT executed in this cloud session
+
+Record device model, OS/API, architecture, decoder, input type and test date. Run on an API 23 phone, current phone/tablet, target Mini IPTV box, Android TV and the actual Android-on-Windows VM. A passing build does not establish these results.
+
+- Install APK, check launcher icon and TV banner, and launch without a touchscreen. Confirm D-pad/arrow focus, Select/Enter, Back and system volume keys. Check the channel editor using a physical keyboard and on-screen keyboard.
+- Confirm empty state. Add a broadcaster-authorized HLS stream; use Test URL then Watch. Try an extensionless HLS endpoint with HLS explicitly selected. Verify picture and sound, buffering, live marker, play/pause, aspect ratios and previous/next. Test low-end decoder/resolution limits.
+- Rotate phone/tablet through portrait/landscape during playback. Check wide-screen sidebar and Full screen toggle. Verify no overlapping controls or unreadable text at 200% font scale, TalkBack semantics and light/dark themes.
+- Favorite, rename, change category, disable and reorder channels. Check favorite/recent/category/search views and skip disabled channels during switching.
+- Background/resume, lock/unlock, switch apps and unplug headphones. Confirm no background playback after pause. Leave the player and confirm audio stops. Repeat channel switching; use Android Studio profiler/MediaCodec logs to confirm player/decoder release and no growing memory usage.
+- Force-stop and restart; confirm channels, history, sort order and settings survive. Test process recreation while the player is selected and verify safe reconnect.
+- Export JSON, import on a second device, inspect preview and duplicates. Test empty JSON, malformed JSON, unknown fields, invalid channel types, HTTP URLs, secret-bearing URLs, a >2 MB file, >2,000 entries, missing M3U names/URLs and duplicate IDs. Confirm existing channels are preserved when cancelling/failing an import.
+- Test Delete and Reset confirmation/cancellation. Confirm Reset removes all local configuration.
+- Test an authorized offline source, HTTP 403/404, invalid/expired certificate, DNS failure, timeout, network loss, geoblock, unsupported codec and expired URL. Confirm clear error and finite auto reconnect. With auto reconnect disabled, confirm the app does not reconnect automatically after a surfaced playback error. Manual Retry should recover after the network returns.
+- Paste a real YouTube watch URL and a live URL. Confirm official YouTube/browser launches, playback/ads remain controlled by YouTube and returning to OpenLive works. Test an unavailable/private/age-restricted/region-restricted video and a device with no browser/YouTube app. Do not send the YouTube page to Media3.
+- In the Android Windows VM, verify guest audio, graphics acceleration/software decoding, network and volume independently. Test full-screen guest display and remote/keyboard navigation. Document codec/resolution limitations; do not generalize from one VM to every Android build.
+- Validate the signed release APK on target devices before publishing. Confirm no private feeds, credentials, debug keys or unverified compatibility claims ship.
